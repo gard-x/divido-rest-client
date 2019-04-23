@@ -1,0 +1,24 @@
+{
+  "name": "defend/i-defend-api",
+  "description": "Connector to Idefend API",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michal Tupy",
+      "email": "michal.tupy@seznam.cz"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1",
+    "phpunit/phpunit": "7.5.6",
+    "guzzlehttp/guzzle": "6.3.3",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "DividoServiceClient\\": "src/"
+    }
+  }
+}
