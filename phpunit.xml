@@ -1,0 +1,30 @@
+<phpunit bootstrap="/tests/bootstrap.php" verbose="true" forceCoversAnnotation="true"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/|version|/phpunit.xsd"
+         backupGlobals="true"
+         backupStaticAttributes="false"
+         cacheResult="false"
+         cacheTokens="false"
+         colors="true"
+         convertErrorsToExceptions="false"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="false"
+
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         stopOnRisky="false"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="60">
+
+    <php>
+        <const name="USER_LOGIN" value="LOGIN"/>
+        <const name="USER_PASSWORD" value="PASSWORD"/>
+        <ini name="display_errors" value="On" />
+        <ini name="display_startup_errors" value="On" />
+    </php>
+
+</phpunit>
