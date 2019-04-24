@@ -4,7 +4,7 @@ services:
     build: ./divido-service-client
     image: divido-service-client
     ports:
-      - "80:80"
+      - "8090:80"
     volumes:
       - ../:/var/www/html/
     environment:
