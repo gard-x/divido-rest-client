@@ -1,8 +1,11 @@
 FROM phpstorm/php-71-apache-xdebug-27
 
-RUN apt-get update -y && apt-get install -y libpng-dev curl libcurl4-openssl-dev
+RUN apt-get update -y
+RUN apt-get install -y \
+    libpng-dev curl libcurl4-openssl-dev wget git
 
-RUN docker-php-ext-install pdo pdo_mysql gd curl http
+RUN docker-php-ext-install \
+    pdo pdo_mysql gd curl
 
 RUN a2enmod rewrite
 
@@ -18,3 +21,6 @@ xdebug.var_display_max_depth=-1\n\
 ">> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN service apache2 restart
+
+RUN wget -O /usr/local/bin/composer "https://getcomposer.org/composer.phar" && \
+    chmod +x /usr/local/bin/composer
