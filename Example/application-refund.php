@@ -9,13 +9,13 @@ require_once "__head.php";
 
 try {
     $application = $api->getApplication(Authenticate::getUser(), $id);
-    $api->cancelApplication(Authenticate::getUser(), $application);
+    $api->refundApplication(Authenticate::getUser(), $application);
 
 } catch (Exception $e) {
     $message = $e->getMessage();
 }
 ?>
-    <h1>Cancel Application <?= $id ?></h1>
+    <h1>Refund Application <?= $id ?></h1>
 
     <div class="btn-group" role="group" aria-label="Actions">
         <?
@@ -25,7 +25,7 @@ try {
         ?>
     </div>
     <div class="container">
-        <?= ($message ? Helper::showMessage(Helper::DANGER, $message) : Helper::showMessage(Helper::SUCCESS, "Canceled")); ?>
+        <?= ($message ? Helper::showMessage(Helper::DANGER, $message) : Helper::showMessage(Helper::SUCCESS, "Refunded")); ?>
 
     </div>
 <?

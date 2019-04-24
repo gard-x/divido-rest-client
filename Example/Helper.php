@@ -64,13 +64,13 @@ class Helper
         return $result;
     }
 
-    public static function getInputBlock($name, $value, $caption, $id = '')
+    public static function getInputBlock($name, $value, $caption, $id = '',$required=false)
     {
         $result = "<div class=\"form-group row\">
-                <label for=\"$id\" class=\"col-sm-3 col-form-label\">$caption</label>
+                <label for=\"$id\" class=\"col-sm-3 col-form-label\">$caption ".($required?" <span>*</span> ":"")."</label>
                 <div class=\"col-sm-3\">
                     <input type=\"deposit\" class=\"form-control\" name=\"$name\" id=\"$id\" placeholder=\"\"
-                           value=\"$value\">
+                           value=\"$value\" ".($required?"required":"").">
                 </div>
             </div>";
 

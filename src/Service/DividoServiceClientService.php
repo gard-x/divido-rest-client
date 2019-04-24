@@ -296,6 +296,30 @@ class DividoServiceClientService
         return $result;
     }
 
+    public function refundApplication(User $user, CreditRequestResponse $application)
+    {
+        if (!$application->isForRefund())
+        {
+            throw new UnallowedOperationExcetion("Application can not be Refunded");
+        }
+
+        try {
+            $result = $this->call('/api/v1/secured/divido/refund', ["application"=>$application->getApplicationId()], $user->getToken());
+        } catch (ApiReplyExcetion $e) {
+            $decoded = json_decode($e->getMessage(), true);
+            if (isset($decoded['exception'])) {
+                throw new ApiReplyExcetion(json_encode($decoded), $e->getCode());
+            } else {
+                throw $e;
+            }
+
+        }
+
+        $result = json_decode($result,true);
+
+        return $result;
+    }
+
 
 
 

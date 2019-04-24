@@ -1,6 +1,6 @@
 <?php
 require_once "bootstrap.php";
-
+Authenticate::redirectWhenNotLogged();
 
 $api = Helper::getApi();
 $id = Helper::getValue('id', null);
@@ -9,7 +9,7 @@ require_once "__head.php";
 
 try {
     $application = $api->getApplication(Authenticate::getUser(), $id);
-    $api->activateApplication(Authenticate::getUser(),$application);
+    $api->activateApplication(Authenticate::getUser(), $application);
 
 } catch (Exception $e) {
     $message = $e->getMessage();
@@ -20,7 +20,7 @@ try {
     <div class="btn-group" role="group" aria-label="Actions">
         <?
 
-            echo '<a name="resend" id="resend-sms" class="btn btn-success" href="application.php?id=' . $application->getApplicationId() . '" role="button">Detail</a>';
+        echo '<a name="resend" id="resend-sms" class="btn btn-success" href="application.php?id=' . $application->getApplicationId() . '" role="button">Detail</a>';
 
         ?>
     </div>

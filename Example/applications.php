@@ -1,5 +1,6 @@
 <?php
 require_once "bootstrap.php";
+Authenticate::redirectWhenNotLogged();
 
 
 $api = Helper::getApi();
@@ -29,11 +30,12 @@ try {
             <? foreach ($applications as $application) {
                 ?>
                 <tr>
-                    <th><a href="application.php?id=<?=$application->getApplicationId()?>" class="btn btn-primary">View</a></th>
-                    <td><?=$application->getApplicationId()?></td>
-                    <td><?=$application->getCreated()?></td>
-                    <td><?=($application->getProducts()[0]?$application->getProducts()[0]->getText():"")?></td>
-                    <td><?=$application->status?></td>
+                    <th><a href="application.php?id=<?= $application->getApplicationId() ?>" class="btn btn-primary">View</a>
+                    </th>
+                    <td><?= $application->getApplicationId() ?></td>
+                    <td><?= $application->getCreated() ?></td>
+                    <td><?= ($application->getProducts()[0] ? $application->getProducts()[0]->getText() : "") ?></td>
+                    <td><?= $application->status ?></td>
 
 
                 </tr>

@@ -34,4 +34,13 @@ class Authenticate
        return isset($_SESSION['user']);
     }
 
+    static function redirectWhenNotLogged()
+    {
+        if (!self::getUser())
+        {
+            header("Location: index.php");
+            exit;
+        }
+    }
+
 }

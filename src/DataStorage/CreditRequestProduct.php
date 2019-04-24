@@ -15,6 +15,7 @@ class CreditRequestProduct extends DataStorage
 {
 
     public $type;
+    public $sku;
     public $text;
     public $quantity;
     public $value;
@@ -101,6 +102,24 @@ class CreditRequestProduct extends DataStorage
     public function setValue($value)
     {
         $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSku()
+    {
+        return $this->sku;
+    }
+
+    /**
+     * @param mixed $sku
+     * @return CreditRequestProduct
+     */
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
         return $this;
     }
 

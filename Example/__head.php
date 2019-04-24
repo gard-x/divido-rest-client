@@ -37,7 +37,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="./">iDefendAPI</a>
+    <a class="navbar-brand" href="./">Gard-X DIVIDO Service Rest Client</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,6 +47,9 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="calculator.php">Finance calculator </a>
+            </li>
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="applications.php">List of Applications</a>
             </li>
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="create-quote.php">Create Test Quote </a>

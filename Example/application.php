@@ -1,6 +1,6 @@
 <?php
 require_once "bootstrap.php";
-
+Authenticate::redirectWhenNotLogged();
 
 $api = Helper::getApi();
 $id = Helper::getValue('id', null);
@@ -14,6 +14,13 @@ try {
 }
 ?>
     <h1>Application <?= $id ?></h1>
+<h3>Instructions</h3>
+<ul>
+    <li>Cancel - if policy is canceled please cancel finance to</li>
+    <li>Activate - Activation finalise application and money will be send</li>
+    <li>Refund - when money have to be refunded.</li>
+
+</ul>
 
     <div class="btn-group" role="group" aria-label="Actions">
         <?
@@ -24,8 +31,8 @@ try {
         if ($application->isForActivation()) {
             echo '<a class="btn btn-success" href="application-activate.php?id=' . $application->getApplicationId() . '" role="button">Activate</a>';
         }
-        if ($application->isForActivation()) {
-            echo '<a class="btn btn-success" href="application-activate.php?id=' . $application->getApplicationId() . '" role="button">Activate</a>';
+        if ($application->isForRefund()) {
+            echo '<a class="btn btn-danger" href="application-refund.php?id=' . $application->getApplicationId() . '" role="button">Refund</a>';
         }
         ?>
     </div>
