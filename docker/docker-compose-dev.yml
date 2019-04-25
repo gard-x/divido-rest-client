@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  divido-service-client-dev:
+    build: ./divido-service-client-dev
+    image: divido-service-client-dev
+    ports:
+      - "8090:80"
+    volumes:
+      - ../:/var/www/html/
+    environment:
+      XDEBUG_CONFIG: "remote_host=host.docker.internal var_display_max_depth=-1 var_display_max_children=-1 var_display_max_data=-1"
