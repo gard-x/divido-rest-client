@@ -186,7 +186,7 @@ class DividoServiceClientService
     {
         try {
             $this->lastResult = $this->client->request($method, $subpath,
-                ['json' => $data, 'headers' => ['X-Auth-Token' => $authToken]]);
+                ['json' => $data, 'headers' => ['X-Auth-Token' => $authToken],"timeout"=>10]);
 
             $this->lastResponseBody = $this->lastResult->getBody()->getContents();
         } catch (ClientException $e) {
