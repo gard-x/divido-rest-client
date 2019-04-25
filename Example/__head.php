@@ -71,6 +71,9 @@
             <a class="nav-link" href="login.php">Login</a>
         </li>
         <?}?>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/gard-x/divido-rest-client" target="_blank">V 0.9</a>
+        </li>
     </ul>
 </nav>
 
