@@ -7,7 +7,11 @@ RUN apt-get install -y \
 RUN docker-php-ext-install \
     pdo pdo_mysql gd curl
 
-RUN git clone https://github.com/gard-x/divido-rest-client.git /var/www/html/
+
+ADD https://api.github.com/repos/gard-x/divido-rest-client/git/refs/heads/master /var/www/version.json
+RUN git clone -bmaster https://github.com/gard-x/divido-rest-client.git /var/www/html/
+
+
 
 RUN wget -O /usr/local/bin/composer "https://getcomposer.org/composer.phar" && \
     chmod +x /usr/local/bin/composer
