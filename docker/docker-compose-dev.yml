@@ -9,3 +9,4 @@ services:
       - ../:/var/www/html/
     environment:
       XDEBUG_CONFIG: "remote_host=host.docker.internal var_display_max_depth=-1 var_display_max_children=-1 var_display_max_data=-1"
+      DIVIDO_SERVICE_TEST_URL: "http://157.230.103.114"

@@ -22,7 +22,7 @@ class Helper
 
     public static function getApi()
     {
-        return \DividoServiceClient\Service\DividoServiceClientService::createDev(USERNAME, PASSWORD);
+        return \DividoServiceClient\Service\DividoServiceClientService::create(getenv("DIVIDO_SERVICE_TEST_URL")?:\DividoServiceClient\Service\DividoServiceClientService::DevUrl);
     }
 
     public static function showMessage($type, $message)

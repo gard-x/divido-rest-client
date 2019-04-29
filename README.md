@@ -19,3 +19,4 @@ https://hub.docker.com/r/gardx/divido-client-example
 
 No configuration needed. For testing ask Gard-X support for activate DIVIDO for your GardX test account.
  
+Define  **DIVIDO_SERVICE_TEST_URL** environment if you want set another url for testing DIVIDO Rest client 

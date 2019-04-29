@@ -39,14 +39,9 @@ class DividoServiceClientService
     private $lastResponseBody = '';
 
 
-    static function createDev()
+    static function create($url=null)
     {
-        return new self(new Client(['base_uri' => static::DevUrl]));
-    }
-
-    static function createLive()
-    {
-        return new self(new Client(['base_uri' => static::LiveUrl]));
+        return new self(new Client(['base_uri' => $url?$url:static::LiveUrl]));
     }
 
     public function __construct(Client $client)
