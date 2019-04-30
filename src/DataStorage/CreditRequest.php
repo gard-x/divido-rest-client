@@ -248,6 +248,7 @@ class CreditRequest extends DataStorage
         foreach ($this->products as $product) {
             $return['products'][] = ["type" => $product->type,
                 "text" => $product->text,
+                "sku" => $product->sku,
                 "quantity" => $product->quantity,
                 "value" => $product->value];
         }
