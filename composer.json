@@ -1,12 +1,12 @@
 {
-  "name": "defend/i-defend-api",
-  "description": "Connector to Idefend API",
+  "name": "gard-x/divido-rest-client",
+  "description": "Connector to Gard-x Divido REST Service",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
       "name": "Michal Tupy",
-      "email": "michal.tupy@seznam.cz"
+      "email": "devops@defendinsurance.eu"
     }
   ],
   "minimum-stability": "dev",
